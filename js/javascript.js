@@ -1,6 +1,6 @@
 
 var number = 0;
-var id = document.getElementById("number");
+var numberDiv = document.querySelector(".smallNumber");
 
 
 document.getElementById("knop").addEventListener("click", klik);
@@ -15,35 +15,37 @@ function klik(){
 function getRandom() {
     // var number = document.getElementById("generate")
 
-    number = Math.floor(Math.random() * 92);
+    number = Math.floor(Math.random() * 87);
 
-    document.getElementById("number").innerHTML = number;
+    numberDiv.innerHTML = number;
 
     console.log(number)
+
+    if (number === 69) {
+        document.querySelector(".nice").innerHTML = "Nice! ;)"
+        console.log('nice');
+        } else { 
+            document.querySelector(".nice").innerHTML = "" 
+    }
 }
 
-if (number >= 10) {
-    console.log('nice')
-}
+
 
 //variabele voor het aantal keer klikken op de button
 var count = 1;
 
 //functie die elke keer 1 optelt bij count
 function hoevaak() {
-  document.getElementById("teller").innerHTML = count++;
-  console.log(count);
+  document.getElementById("teller").innerHTML = "Aantal keren geklikt " + count++;
+//   console.log(count);
 }
+
 
 function changeid() {
-    if (id) {​​​​​
-        console.log(document.getElementById("number"))
-        document.getElementById("number").id = "numberbig"
-        }​​​​​ else {
-
-        }
+    if (numberDiv.classList.contains("smallNumber")) {
+        numberDiv.classList.add("bigNumber")
+    }
 }
-
 
 function log() {
     console.log('functie')
